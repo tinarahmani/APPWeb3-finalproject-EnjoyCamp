@@ -14,6 +14,21 @@ main {
 header {
     justify-content: space-between;
     align-items: center;
+    color: white;
+    text-decoration: wavy;
+    text-shadow: 0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black;
+    animation: glow 2s infinite;
+}
+@keyframes glow {
+    0% {
+        text-shadow:0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black;
+    }
+    50% {
+        text-shadow:0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black, 0 0 50px black;
+    }
+    100% {
+        text-shadow:0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black;
+    }
 }
 nav {
     position: absolute;
