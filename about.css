@@ -44,6 +44,37 @@ nav a {
     width: 90px;
     padding: 10px;
 }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin-left: 60.5%;
+    width: 130px;
+    padding-left: 12px;
+}
+
+.dropdown-content li {
+    text-align: left;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    display: block;
+    color: #000;
+}
+
+.dropdown-content a:hover {
+    background-color: #E76F51;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 footer {
     background-color: black;
