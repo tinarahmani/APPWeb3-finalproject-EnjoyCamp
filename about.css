@@ -1,11 +1,12 @@
 html, body {
-    background-color: #fefae0;
+    background-color: #E9C46A;
 }
 main {
     background-color: #E9C46A;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 50px;
 }
 .header {
     display: flex;
@@ -14,6 +15,21 @@ main {
 header {
     justify-content: space-between;
     align-items: center;
+    color: white;
+    text-decoration: wavy;
+    text-shadow: 0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black;
+    animation: glow 2s infinite;
+}
+@keyframes glow {
+    0% {
+        text-shadow:0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black;
+    }
+    50% {
+        text-shadow:0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black, 0 0 50px black;
+    }
+    100% {
+        text-shadow:0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black;
+    }
 }
 nav {
     position: absolute;
@@ -29,7 +45,156 @@ nav a {
     width: 90px;
     padding: 10px;
 }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin-left: 60.5%;
+    width: 130px;
+    padding-left: 12px;
+}
 
+.dropdown-content li {
+    text-align: left;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    display: block;
+    color: #000;
+}
+
+.dropdown-content a:hover {
+    background-color: #E76F51;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.part1 {
+    text-align: center;
+    font-size: 50px;
+}
+h2 {
+    margin-top: -70px;
+}
+.part1 p {
+    font-size: 25px;
+    padding-left: 500px;
+    padding-right: 500px;
+    margin-top: -50px;
+}
+.row {
+    display: flex;
+    margin-left: 5%;
+}
+.row img {
+    width: 400px;
+    height: 500px;
+    margin-left: 40px;
+    box-shadow: 0 0 30px 0 #2A9D8F;
+    border: solid #264653;
+}
+.row img:hover {
+    border: solid #E9C46A;
+}
+.about1 {
+    text-align: center;
+    background-color: #E76F51;
+    margin-top: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.about1 h3 {
+    font-size: 30px;
+}
+.about1 h5 {
+    padding-top: 20px;
+    font-size: 15px;
+}
+.about1 p {
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+.about2 {
+    text-align: center;
+    background-color: white;
+    margin-top: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    margin-bottom: 50px;
+}
+.about2 h4 {
+    text-align: left;
+}
+.apply {
+    text-align: left;
+    color: gray;
+}
+button {
+    text-align: left;
+    margin-left: -90%;
+    margin-top: 30px;
+}
+.apply2 {
+    display: none;
+}
+form {
+    width: 20%;
+    padding-left: 50%;
+    margin-top: -20%;
+    color: #2A9D8F;
+}
+legend {
+    height: 20px;
+}
+input {
+    background: none;
+    border: none;
+    width: 95%;
+    padding-left: 10px;
+    font-size: 15px;
+}
+input:focus {
+    outline-style: none;
+    box-shadow: none;
+}
+#send {
+    margin-left: 80%;
+    margin-top: 10px;
+    padding: 5px;
+}
+#confirmation {
+    text-align: right;
+    margin-right: 30%;
+    margin-top: -7%;
+    animation-name: textzoom;
+    animation-duration: 5s;
+    display: none;
+}
+@keyframes textzoom {
+    0% {
+        font-size: 10px;
+        color: black;
+    }
+    100% {
+        font-size: 20px;
+        color: #E76F51;
+    }
+}
 footer {
     background-color: black;
     color: white;

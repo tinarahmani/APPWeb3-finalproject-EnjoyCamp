@@ -16,18 +16,120 @@
                 <div>
                     <nav>
                         <a href="home.html">Home</a>
-                        <a href="nearme.html">Near Me</a>
-                        <a href="about.html">About</a>
+                        <a href="about.html" id="dropbtn">About</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#value">Our Values</a></li>
+                            <li><a href="#story">Our Story</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                        </ul>
                         <a href="earncash.html">Earn Cash</a>
                         <a href="starthosting.html">Start Hosting</a>
                         <a href="login.html">Log in</a>
                     </nav>
                 </div>
             </div>
+            <div class="part1">
+                <h1>Find yourself</h1>
+                <h2>outside.</h2>
+                <p>Discover and book tent camping, RV parks, cabins, treehouses, and glamping in Australia, Canada, France, the United Kingdom, and the US.</p>
+            </div>
+            <div class="row">
+                <div>
+                    <img src="1.jpg" alt="camping">
+                </div>
+                <div>
+                    <img src="2.jpg" alt="camping1">
+                </div>
+                <div>
+                    <img src="3.jpg" alt="camping2">
+                </div>
+            </div>
         </section>
+        <section class="about1">
+            <div>
+                <h5>OUR MISSION</h5>
+                <h3>Get more people outside</h3>
+                <p>EnjoyCAMP is a growing community of good-natured people and the most comprehensive resource for unique outdoor stays. By connecting people with the land and each other, EnjoyCAMP works to support those who care for the land and get more people out under the stars. We do this because we believe humans in nature bring out the best of human nature.</p>
+            </div>
+            <div id="value">
+                <hr><h5>OUR VALUE</h5>
+                <h3>Leave it Better</h3>
+                <p>From the codebase to our ecosystem, we endeavor to create a positive impact on our teammates, our work, our communities. We are continually improving (Kaizen!) and approach our work with the responsibility of stewardship.</p>
+            </div>
+            <div>
+                <hr><h3>Create Magic</h3>
+                <p>We create magic for our customers, our teammates and the communities that we impact. Magic takes many forms, from a magical camping spot on a waterfall to an upgraded internal process. Our business regenerates our bodies, spirits, rural economies, and our ecosystem--how we create this business incorporates that magic every step of the way. Ikigai.</p>
+            </div>
+            <div>
+                <hr><h3>WIN TOGETHER</h3>
+                <P>We prioritize the team's win over personal glory. We make the time to communicate well. We invest in getting to know our teammates and build relationships before we need them.</P>
+            </div>
+            <div id="story">
+                <hr><h5>OUR STORY</h5>
+                <h3>It started with a wave</h3>
+                <p>The EnjoyCAMP story began with waves—gorgeous, glassy, barrelling waves. They were crashing on California’s Central Coast at Andrew Molera State Park as EnjoyCAMP founder and CEO Alyssa Ravasio watched in frustration.</p>
+                <p>She had spent several hours searching dozens of websites for a spot that fit what she thought was a simple request: a beach to set up camp and watch the first sunrise of 2013.</p>
+                <p>EnjoyCAMP has since grown into the most comprehensive resource for discovering and booking unique outdoor stays including tent camping, RV parks, cabins, treehouses, and glamping.</p>
+            </div>
+        </section>
+        <section class="about2" id="careers">
+            <h5>CAREERES</h5>
+            <h3>Join the EnjoyCAMP team</h3>
+            <p>We are driven by our mission to get more people outside and believe connecting with nature is essential to a happy and healthy human life. Here is our list of open positions. If you think you might be a good fit for our team, don't hesitate to get in touch with us.</p>
+            <h4>EnjoyCAMP Photographer</h4>
+            <div class="apply">
+                <div>
+                    <em>Part-time</em>
+                </div>
+                <div>
+                    <em>Distributed</em>
+                </div>
+                <div>
+                    <em>Photography</em>
+                </div>
+            </div>
+            <button id="apply-button">Apply here</button>
+        </section>
+        <div id="apply" class="apply2">
+            <form>
+                 <fieldset>
+                        <legend>First Name</legend>
+                        <input type="text" name="name" id="first-name" required minlength="3">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Last Name</legend>
+                        <input type="text" name="name" id="last-name" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Email Address</legend>
+                        <input type="text" name="email" id="emai" required>
+                    </fieldset>
+                <button id="send">Send</button>
+            </form>
+        </div>
+        <div id="confirmation">
+            <p>We will contact you soon :)</p>
+        </div>
     </main>
     <footer>
         EnjoyCAMP is created with ❤️ and hope for our future
     </footer>
+    <script>
+        document.querySelectorAll('#dropbtn').forEach(button => {
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const dropdownContent = button.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+});
+document.querySelector("#apply-button").onclick = function() {
+    document.querySelector("#apply").style.display = "block";
+}
+document.querySelector("#send").onclick = function() {
+    document.querySelector("#apply").style.display = "none";
+    document.querySelector("#confirmation").style.display = "block";
+}
+
+    </script>
 </body>
 </html>
