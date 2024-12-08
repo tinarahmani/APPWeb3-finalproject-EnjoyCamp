@@ -3,9 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>earncash</title>
+    <title>earn CASH</title>
+    <link rel="stylesheet" type="text/css" href="earncash.css">
 </head>
 <body>
+    <main>
+        <section>
+            <div class="header">
+                <header>
+                    <h1>EnjoyCAMP</h1>
+                </header>
+                <div>
+                     <nav>
+                        <a href="home.html">Home</a>
+                        <a href="about.html" id="dropbtn">About</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#value">Our Values</a></li>
+                            <li><a href="#story">Our Story</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                        </ul>
+                        <a href="earncash.html">Earn Cash</a>
+                        <a href="starthosting.html">Start Hosting</a>
+                        <a href="login.html">Log in</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </main>
+  
+     <main class="earncash-section">
+        <div class="container">
+            <div class="main-content">
+                <div class="image-container">
+                    <img width="200px" src="https://media.istockphoto.com/id/1460642879/photo/earn-more-wording-with-money-and-coins-financial-concept.jpg?s=612x612&w=0&k=20&c=PZDbB1zHkzgjhMavdB5VX6Uc8REtabq3zx4c3aX_vq8=">
+                </div>
+                <div class="info-section">
+                    <h1>Earn Cash by Inviting Friends!</h1>
+                    <p>Invite your friends to this amazing camping site and earn rewards for every invitation!</p>
+                    <input type="email" id="friendEmail" placeholder="Enter your friend's email" />
+                    <button onclick="addInvitation()">Invite</button>
+                </div>
+            </div>
+            <div class="promo-container shine">
+                <h1 class="title">Attention Landowners!</h1>
+                <div class="description">
+                  Looking for property owners ready to welcome campers?<br>
+                  Here's an amazing opportunity for you!
+                </div>
+                <div class="reward">
+                  $100 CASH
+                </div>
+                <div class="description">
+                  Refer a landowner and you'll <span class="guarantee">both</span> receive<br>
+                  <span class="guarantee">GUARANTEED</span> cash rewards!
+                </div>
+              </div>
+              <!--  -->
+              <div class="stats-container">
+                <div class="stat-card" id="invites">
+                  <p id="invitationCount" class="stat-value">0</p>
+                  <p id="invitationCount" class="stat-label">Invitations Sent</p>
+                </div>
+            
+                <div class="stat-card" id="rewards">
+                  <p id="rewardInfo" class="stat-value">$15</p>
+                  <p class="stat-label">Per Invitation</p>
+                </div>
+            
+                <div class="stat-card" id="credits">
+                  <p id="totalCredits" class="stat-value">$0</p>
+                  <p class="stat-label">Total Credits</p>
+                </div>
+              </div>
+        </div>
     
+        <script>
+            let invitationCount = 0;
+            let credits = 0;
+            const rewardPerInvite = 15;
+    
+            function addInvitation() {
+                const emailInput = document.getElementById('friendEmail');
+                const email = emailInput.value.trim();
+    
+                if (email) {
+                    invitationCount++;
+                    credits += rewardPerInvite;
+                    emailInput.value = '';
+                    updateStats();
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            }
+    
+            function updateStats() {
+                document.getElementById('invitationCount').textContent = 
+                    `You have invited ${invitationCount} friend${invitationCount === 1 ? '' : 's'}.`;
+    
+                document.getElementById('totalCredits').textContent = 
+                    `Your total credits: $${credits}`;
+            }
+        </script>
+     </main>
+     <footer>
+        EnjoyCAMP is created with ❤️ and hope for our future
+    </footer>
 </body>
 </html>
