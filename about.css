@@ -10,7 +10,7 @@ main {
 }
 .header {
     display: flex;
-    margin-left: 10%;
+    margin-left: 32px;
 }
 header {
     justify-content: space-between;
