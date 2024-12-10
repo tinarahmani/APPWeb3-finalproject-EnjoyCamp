@@ -1,2 +1,2 @@
-This site is about camping, which has 5 pages: home, about, earn cash, start hosting and login.
-Five individuals, namely Zarifa Rahmani, Masoma Hossaini, Tina Rahmani, Mursal Satari, and Zuhal Sadat, collaborated on the development of this website.
+This site is about camping and has five pages: home, about, earn cash, start hosting, and login.
+Five individuals, namely Zarifa Rahmani (Earn Cash page), Masoma Hossaini (login page), Tina Rahmani(About page), Mursal Satari(start hosting page), and Zuhal Sadat (Home page), collaborated on the development of this website.
