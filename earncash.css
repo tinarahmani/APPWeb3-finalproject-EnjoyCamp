@@ -1,5 +1,7 @@
 html, body {
     background-color: #E9C46A;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 main {
     background-color: #E9C46A;
@@ -9,7 +11,7 @@ main {
 }
 .header {
     display: flex;
-    margin-left: 10%;
+    margin-left: 32px;
 }
 header {
     justify-content: space-between;
@@ -23,26 +25,26 @@ header {
     0% {
         text-shadow:0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black;
     }
-    50% {
-        text-shadow:0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black, 0 0 50px black;
+    50% { text-shadow:0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black, 0 0 50px black;
     }
     100% {
         text-shadow:0 0 20px black, 0 0 25px black, 0 0 30px black, 0 0 35px black, 0 0 40px black, 0 0 45px black;
     }
 }
 nav {
-    position: absolute;
-    padding-top: 5px;
-    margin-top: 10px;
-    display: flex;
-    width: 80%;
-    justify-content: flex-end;
+  position: absolute;
+  padding-top: 12px;
+  margin-top: 10px;
+  display: flex;
+  width: 80%;
+  justify-content: flex-end;
 }
 nav a {
-    text-decoration: none;
-    color: #264653;
-    width: 90px;
-    padding: 10px;
+  text-decoration: none;
+  color: #264653;
+
+  padding: 18px;
+  font-size: 16px;
 }
 .dropdown-content {
     display: none;
