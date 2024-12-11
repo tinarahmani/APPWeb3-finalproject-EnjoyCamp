@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-    <link rel="stylesheet" type="text/css" href="about.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <main>
@@ -14,8 +14,8 @@
                     <h1>EnjoyCAMP</h1>
                 </header>
                 <div>
-                     <nav>
-                        <a href="home.html">Home</a>
+                    <nav>
+                        <a href="index.html">Home</a>
                         <a href="about.html" id="dropbtn">About</a>
                         <ul class="dropdown-content">
                             <li><a href="#value">Our Values</a></li>
@@ -29,18 +29,297 @@
                 </div>
             </div>
         </section>
+
+        <section class="hero-search-section">
+            <div class="hero">
+                <h2 class="text">Camp Your Way</h2>
+                <h2 class="text">Find the perfect place to match your camping style</h2>
+            </div>
+            <div class="search-section">
+                
+                <input type="date" class="search-input" placeholder="Select Date">
+
+                
+                <button id="number-of-guests-btn" class="search-button">Number of Guests</button>
+
+                
+                <button id="search-button" class="search-button">Search</button>
+            </div>
+
+            
+            <div id="guest-box" class="guest-box" style="display: none;">
+                <div class="guest-line">
+                    <div class="guest-info">
+                        <h3>Adults</h3>
+                        <p>Ages 13 or Above</p>
+                    </div>
+                    <div class="guest-controls">
+                        <button class="guest-btn" id="minus-adults">-</button>
+                        <span id="adult-count">0</span>
+                        <button class="guest-btn" id="plus-adults">+</button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="guest-line">
+                    <div class="guest-info">
+                        <h3>Children</h3>
+                        <p>Ages 12 or Below</p>
+                    </div>
+                    <div class="guest-controls">
+                        <button class="guest-btn" id="minus-children">-</button>
+                        <span id="children-count">0</span>
+                        <button class="guest-btn" id="plus-children">+</button>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="guest-line">
+                    <div class="guest-info">
+                        <h3>Any Pets?</h3>
+                        <p>Do you have any pets to bring?</p>
+                    </div>
+                    <div class="guest-controls">
+                        <button class="guest-btn" id="minus-pets">-</button>
+                        <span id="pets-count">0</span>
+                        <button class="guest-btn" id="plus-pets">+</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="image-section">
+            <img src="image.jpeg" alt="Camping Image" class="main-image">
+        </section>
+
+        <div class="info-picture">
+            <div class="info-box">
+                <h3 id="place-name">Information About the Place</h3>
+                <p id="place-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            </div>
+            <div class="picture-box">
+                <img id="place-image" class="info-image" src="https://i.pinimg.com/736x/a4/1e/54/a41e54e5fd27faf2132899b7df34920f.jpg" alt="Place Image" class="info-image">
+            </div>
+        </div>
+
+        <section class="image-cards">
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/bc/f8/68/bcf8688c60e4b25acdd0a22d1d94281f.jpg" alt="Image 1" class="circle-image">
+                <p>Camp Your Way</p>
+                <p>No matter how you camp- in a tent, van or rig- with kids or your pup, we got you</p>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/2c/bd/1c/2cbd1cc0c703cb3c289d1ada757c0675.jpg" alt="Image 2" class="circle-image">
+                <p>Only in EnjoyCAMP</p>
+                <p>Explore our collection of over 80,000 sites you won't find anywhere else</p>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/51/97/bf/5197bf4394d04aef8049c91097ae9b82.jpg" alt="Image 3" class="circle-image">
+                <p>Find yourself outside</p>
+                <p>Browse our comprehensive maps, read real reviews, and book direct with EnjoyCAMP</p>
+            </div>
+        </section>
+
     </main>
+
     <footer>
         EnjoyCAMP is created with ❤️ and hope for our future
     </footer>
-     <script>
-         document.querySelectorAll('#dropbtn').forEach(button => {
+
+    <script>
+
+document.querySelectorAll('#dropbtn').forEach(button => {
     button.addEventListener('click', (event) => {
         event.preventDefault();
         const dropdownContent = button.nextElementSibling;
         dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
     });
 });
-     </script>
+
+
+         document.getElementById('number-of-guests-btn').addEventListener('click', function() {
+            const guestBox = document.getElementById('guest-box');
+            guestBox.style.display = guestBox.style.display === 'block' ? 'none' : 'block';
+        });
+
+        function updateButtonText() {
+            const adults = parseInt(document.getElementById('adult-count').textContent);
+            const children = parseInt(document.getElementById('children-count').textContent);
+            const pets = parseInt(document.getElementById('pets-count').textContent);
+            
+            const totalGuests = adults + children + pets;
+            const buttonText = totalGuests > 0 ? `${totalGuests} Guests` : "Number of Guests";
+            document.getElementById('number-of-guests-btn').textContent = buttonText;
+        }
+
+        document.getElementById('plus-adults').addEventListener('click', function() {
+            let count = parseInt(document.getElementById('adult-count').textContent);
+            document.getElementById('adult-count').textContent = count + 1;
+            updateButtonText();
+        });
+
+        document.getElementById('minus-adults').addEventListener('click', function() {
+            let count = parseInt(document.getElementById('adult-count').textContent);
+            if (count > 0) {
+                document.getElementById('adult-count').textContent = count - 1;
+                updateButtonText();
+            }
+        });
+
+        document.getElementById('plus-children').addEventListener('click', function() {
+            let count = parseInt(document.getElementById('children-count').textContent);
+            document.getElementById('children-count').textContent = count + 1;
+            updateButtonText();
+        });
+
+        document.getElementById('minus-children').addEventListener('click', function() {
+            let count = parseInt(document.getElementById('children-count').textContent);
+            if (count > 0) {
+                document.getElementById('children-count').textContent = count - 1;
+                updateButtonText();
+            }
+        });
+
+        document.getElementById('plus-pets').addEventListener('click', function() {
+            let count = parseInt(document.getElementById('pets-count').textContent);
+            document.getElementById('pets-count').textContent = count + 1;
+            updateButtonText();
+        });
+
+        document.getElementById('minus-pets').addEventListener('click', function() {
+            let count = parseInt(document.getElementById('pets-count').textContent);
+            if (count > 0) {
+                document.getElementById('pets-count').textContent = count - 1;
+                updateButtonText();
+            }
+        });
+
+
+        const placesInfo = [
+    {
+        name: "Beach Paradise",
+        description: "A serene beach with golden sands and turquoise waters.",
+        image: "https://i.pinimg.com/736x/02/c5/0e/02c50e59d35d9cc6a7ea9e18c94bb74c.jpg"
+    },
+    {
+        name: "Mountain Retreat",
+        description: "A beautiful retreat in the mountains surrounded by nature.",
+        image: "https://i.pinimg.com/474x/36/24/52/362452c2a493e9b9d53c19511fcadf7f.jpg"
+    },
+    {
+        name: "City Lights",
+        description: "The bustling city with breathtaking skyline views at night.",
+        image: "https://i.pinimg.com/736x/b0/95/bf/b095bfe8b7c43f705f7dd541c6987d84.jpg"
+    },
+    {
+        name: "Desert Adventure",
+        description: "Explore the vast desert with rolling dunes and starry skies.",
+        image: "https://i.pinimg.com/474x/1d/98/31/1d9831890fc7f33cb2b9a201ebf36e38.jpg"
+    },
+    {
+        name: "Rainforest Escape",
+        description: "Immerse yourself in lush greenery and exotic wildlife.",
+        image: "https://i.pinimg.com/736x/ba/ba/85/baba855fd2b4e55155927835a71c692a.jpg"
+    },
+    {
+        name: "Tropical Island",
+        description: "An island paradise surrounded by crystal-clear waters.",
+        image: "https://i.pinimg.com/474x/5d/91/44/5d914446913ade8b539e512088e2b709.jpg"
+    },
+    {
+        name: "Beach",
+        description: "Enjoy Camping beside the sea.",
+        image: "https://i.pinimg.com/236x/31/e1/84/31e1849d3c951b780df0aaedaf7099fe.jpg"
+    },
+    {
+        name: "Countryside Bliss",
+        description: "Relax in the peaceful countryside with scenic landscapes.",
+        image: "https://i.pinimg.com/236x/f9/4f/60/f94f60de1293c40eb071e3160f500844.jpg"
+    },
+    {
+        name: "Frozen Tundra",
+        description: "Experience the breathtaking beauty of icy landscapes.",
+        image: "https://i.pinimg.com/736x/4d/ee/e9/4deee93571045c8edd27ac0576f0f289.jpg"
+    },
+    {
+        name: "Hidden Waterfall",
+        description: "A secluded waterfall surrounded by lush greenery.",
+        image: "https://i.pinimg.com/474x/4b/7f/a5/4b7fa543251dce9fe41b9d17f28f221c.jpg"
+    },
+    {
+        name: "Forest",
+        description: "Enjoy your day with nature.",
+        image: "https://i.pinimg.com/736x/ee/bd/ef/eebdefe1a2f74c3b0e568399f46c141b.jpg"
+    },
+    {
+        name: "Sunset Cliffs",
+        description: "Watch the sunset from stunning cliffside views.",
+        image: "https://i.pinimg.com/474x/e4/24/17/e42417c5469e2244f6a3060167e6ed73.jpg"
+    },
+    {
+        name: "Sea",
+        description: "What is better than having a great day beside a sea.",
+        image: "https://i.pinimg.com/236x/31/e1/84/31e1849d3c951b780df0aaedaf7099fe.jpg"
+    },
+    {
+        name: "Peaceful Lake",
+        description: "A tranquil lake perfect for relaxation and reflection.",
+        image: "https://i.pinimg.com/236x/33/0f/9a/330f9ae41fe17be8d374a37561ce59a0.jpg"
+    },
+    {
+        name: "Snowy Forest",
+        description: "A magical forest blanketed in snow during winter.",
+        image: "https://i.pinimg.com/474x/af/21/8a/af218a2c2de444c470bf241962648757.jpg"
+    },
+    {
+        name: "Vineyard Views",
+        description: "Stroll through picturesque vineyards and taste fine wine.",
+        image: "https://i.pinimg.com/236x/c8/4d/13/c84d136374d219f9c647930ca2097a37.jpg"
+    },
+    {
+        name: "Wildlife Safari",
+        description: "Get up close with exotic animals in their natural habitat.",
+        image: "https://i.pinimg.com/236x/75/7b/93/757b93ee9377731c40e4d31a7f41de18.jpg"
+    },
+    {
+        name: "Historical Castle",
+        description: "Step back in time with a visit to an old castle.",
+        image: "https://i.pinimg.com/236x/5f/ad/ab/5fadab89526deb9d20c737a3434c4261.jpg"
+    },
+    {
+        name: "Tropical Lagoon",
+        description: "Swim in the calm waters of a stunning tropical lagoon.",
+        image: "https://i.pinimg.com/236x/a0/e3/62/a0e3629d0c723c2306ae3dab78ab922f.jpg"
+    },
+    {
+        name: "Rocky Canyon",
+        description: "Hike through majestic canyons with awe-inspiring views.",
+        image: "https://i.pinimg.com/236x/e8/6b/2d/e86b2d2283fe9855cf6c80b40a053409.jpg"
+    }
+];
+
+let currentIndex = 0;
+
+function updatePlaceInfo() {
+    const placeName = document.getElementById("place-name");
+    const placeDescription = document.getElementById("place-description");
+    const placeImage = document.getElementById("place-image");
+
+    const currentPlace = placesInfo[currentIndex];
+
+    placeName.textContent = currentPlace.name;
+    placeDescription.textContent = currentPlace.description;
+    placeImage.src = currentPlace.image;
+
+    currentIndex = (currentIndex + 1) % placesInfo.length;
+}
+
+document.getElementById("search-button").addEventListener("click", updatePlaceInfo);
+
+
+
+    </script>
 </body>
 </html>
