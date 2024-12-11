@@ -92,11 +92,21 @@
                     <div class="bio1">Coordinator</div>
                     <div class="bio2">Planning, organizing, and overseeing all aspects of a camping trip</div>
                 </div>
-                <div>
-                    <button id="next">Next>>></button>
-                </div>
+               
+               
+                
             </div>
-           
+            <div>
+                <button id="next">Next>>></button>
+                
+            </div>
+            <div>
+                <button class="more">
+                <a href="./more.html">
+                More Members
+            </a>
+            </button>
+            </div>
         </section>
         <section class="about2" id="careers">
             <h5>CAREERES</h5>
@@ -174,7 +184,8 @@ document.querySelectorAll('#dropbtn').forEach(button => {
     }
  ];
  // Function to randomize the content
-function randomizeTeam() {
+
+ function randomizeTeam() {
     // Select a random member
     const randomIndex = Math.floor(Math.random() * teamMembers.length);
     const randomMember = teamMembers[randomIndex];
@@ -186,7 +197,6 @@ function randomizeTeam() {
     document.querySelector(".bio1").textContent = randomMember.bio1;
     document.querySelector(".bio2").textContent = randomMember.bio2;
   }
-  
   // Add event listener to the "Next" button
   document.getElementById("next").addEventListener("click", randomizeTeam);
     </script>
