@@ -160,7 +160,6 @@ h2 {
 .row3 {
     display: flex;
     width: 800px;
-    margin-left: 15%;
     justify-content: center;
 }
 .row3 img {
