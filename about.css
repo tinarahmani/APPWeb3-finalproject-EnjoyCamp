@@ -159,6 +159,14 @@ h2 {
 }
 .row3 {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.member {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -169,7 +177,6 @@ h2 {
     margin: 4px;
     border: 4px solid #6a994e;
     padding: 4px;
-    margin-left: 36px;
     
 }
 .name {
