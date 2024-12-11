@@ -118,6 +118,7 @@ h2 {
 .row {
     display: flex;
     margin-left: 5%;
+    justify-content: center;
 }
 .row img {
     width: 300px;
@@ -160,6 +161,7 @@ h2 {
     display: flex;
     width: 800px;
     margin-left: 15%;
+    justify-content: center;
 }
 .row3 img {
     width: 190px;
